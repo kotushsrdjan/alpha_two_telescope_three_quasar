@@ -1,0 +1,25 @@
+# he2217m2818/reduce_437_01.cpl: CPL Reduction Script by UVES_headsort
+# Not including STANDARDS on request
+uves_makesof.csh 437_01
+#uves_itphmod.csh 437_01
+esorex uves_cal_predict --plotter='cat > gnuplot_437_01_$$.gp' --mbox_x=20 --mbox_y=20 --trans_x=-5.0 --trans_y=-1.5 reduce_437_01_pred.sof
+uves_filtplot.py 437_01 -x -p phmod_437_01_b.ps XDIF YDIF XMOD YMOD
+esorex uves_cal_orderpos reduce_437_01_ord.sof
+esorex uves_cal_mbias reduce_437_01_bias.sof
+esorex uves_cal_mflat reduce_437_01_flat.sof
+esorex uves_cal_wavecal --degree=6 --tolerance=0.195 --minlines=0 --maxlines=0 reduce_437_01_wav1.sof
+esorex uves_obs_scired --debug reduce_437_01_sci.sof
+#uves_itwavres.csh 437_01 0.065 6 nlines 0 0
+esorex uves_cal_wavecal --debug --extract.method=weighted --plotter='cat > gnuplot_437_01_$$.gp' --degree=6 --tolerance=0.045 reduce_437_01_wav2.sof
+UVES_wavres linetable_blue.fits > wavres_437_01_b.dat
+uves_filtplot.py 437_01 -x -p resol_437_01_b.ps WaveC Resol X Ynew
+esorex uves_obs_scired --debug reduce_437_01_sci.sof
+uves_copyhead.csh 437_01
+/bin/mv -f wfxb_blue.fits wfxb_he2217m2818_sci_437_01_b.fits
+/bin/mv -f errwfxb_blue.fits errwhe2217m2818_sci_437_01_b.fits
+/bin/mv -f fxb_blue.fits fxb_he2217m2818_sci_437_01_b.fits
+/bin/mv -f errfxb_blue.fits err_he2217m2818_sci_437_01_b.fits
+/bin/mv -f spectrum_blue_0_2.fits thar_he2217m2818_sci_437_01_b.fits
+/bin/mv -f spectrum_noise_blue_0_2.fits errthar_he2217m2818_sci_437_01_b.fits
+/bin/mv -f linetable_blue.fits wpol_he2217m2818_sci_437_01_b.fits
+/bin/rm -f reduce_437_01_*.sof *_blue*

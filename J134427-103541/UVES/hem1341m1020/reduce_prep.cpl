@@ -1,0 +1,4 @@
+# hem1341m1020/reduce_prep.cpl: CPL Reduction Preparation by UVES_headsort
+ln -s /home/jwhitmor/progs/uves/calib/uves/ech/cal/thargood_4.fits thargood.fits
+ln -s /home/jwhitmor/progs/uves/calib/uves/ech/cal/atmoexan.fits atmoexan.fits
+ln -s /home/jwhitmor/progs/uves/calib/uves/ech/cal/flxstd.fits flxstd.fits

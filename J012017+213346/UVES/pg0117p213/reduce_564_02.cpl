@@ -1,0 +1,42 @@
+# pg0117p213/reduce_564_02.cpl: CPL Reduction Script by UVES_headsort
+# Not including STANDARDS on request
+uves_makesof.csh 564_02
+#uves_itphmod.csh 564_02 redl
+esorex uves_cal_predict --process_chip=redl --plotter='cat > gnuplot_564_02_$$.gp' --mbox_x=20 --mbox_y=20 --trans_x=-2.0 --trans_y=-1.5 reduce_564_02_pred.sof
+uves_filtplot.py 564_02 -x -p phmod_564_02_l.ps XDIF YDIF XMOD YMOD
+#uves_itphmod.csh 564_02 redu
+esorex uves_cal_predict --process_chip=redu --plotter='cat > gnuplot_564_02_$$.gp' --mbox_x=20 --mbox_y=20 --trans_x=-2.5 --trans_y=-1.0 reduce_564_02_pred.sof
+uves_filtplot.py 564_02 -x -p phmod_564_02_u.ps XDIF YDIF XMOD YMOD
+esorex uves_cal_orderpos --process_chip=redl reduce_564_02_ord.sof
+esorex uves_cal_orderpos --process_chip=redu reduce_564_02_ord.sof
+esorex uves_cal_mbias reduce_564_02_bias.sof
+esorex uves_cal_mflat reduce_564_02_flat.sof
+esorex uves_cal_wavecal --process_chip=redl --degree=6 --tolerance=0.195 --minlines=0 --maxlines=0 reduce_564_02_wav1.sof
+esorex uves_cal_wavecal --process_chip=redu --degree=6 --tolerance=0.195 --minlines=0 --maxlines=0 reduce_564_02_wav1.sof
+esorex uves_obs_scired --debug reduce_564_02_sci.sof
+#uves_itwavres.csh 564_02 0.065 6 redl nlines 0 0
+esorex uves_cal_wavecal --debug --process_chip=redl --extract.method=weighted --plotter='cat > gnuplot_564_02_$$.gp' --degree=6 --tolerance=0.065 --minlines=0 --maxlines=0 reduce_564_02_wav2.sof
+UVES_wavres linetable_redl.fits > wavres_564_02_l.dat
+uves_filtplot.py 564_02 -x -p resol_564_02_l.ps WaveC Resol X Ynew
+#uves_itwavres.csh 564_02 0.065 6 redu nlines 0 0
+esorex uves_cal_wavecal --debug --process_chip=redu --extract.method=weighted --plotter='cat > gnuplot_564_02_$$.gp' --degree=6 --tolerance=0.060 --minlines=0 --maxlines=0 reduce_564_02_wav2.sof
+UVES_wavres linetable_redu.fits > wavres_564_02_u.dat
+uves_filtplot.py 564_02 -x -p resol_564_02_u.ps WaveC Resol X Ynew
+esorex uves_obs_scired --debug reduce_564_02_sci.sof
+uves_copyhead.csh 564_02
+/bin/mv -f wfxb_redl.fits wfxb_pg0117p213_sci_564_02_l.fits
+/bin/mv -f errwfxb_redl.fits errwpg0117p213_sci_564_02_l.fits
+/bin/mv -f fxb_redl.fits fxb_pg0117p213_sci_564_02_l.fits
+/bin/mv -f errfxb_redl.fits err_pg0117p213_sci_564_02_l.fits
+/bin/mv -f spectrum_redl_0_2.fits thar_pg0117p213_sci_564_02_l.fits
+/bin/mv -f spectrum_noise_redl_0_2.fits errthar_pg0117p213_sci_564_02_l.fits
+/bin/mv -f linetable_redl.fits wpol_pg0117p213_sci_564_02_l.fits
+/bin/mv -f wfxb_redu.fits wfxb_pg0117p213_sci_564_02_u.fits
+/bin/mv -f errwfxb_redu.fits errwpg0117p213_sci_564_02_u.fits
+/bin/mv -f fxb_redu.fits fxb_pg0117p213_sci_564_02_u.fits
+/bin/mv -f errfxb_redu.fits err_pg0117p213_sci_564_02_u.fits
+/bin/mv -f spectrum_redu_0_2.fits thar_pg0117p213_sci_564_02_u.fits
+/bin/mv -f spectrum_noise_redu_0_2.fits errthar_pg0117p213_sci_564_02_u.fits
+/bin/mv -f linetable_redu.fits wpol_pg0117p213_sci_564_02_u.fits
+/bin/mv -f esorex.log esorex_564_02.log
+/bin/rm -f reduce_564_02_*.sof *_red[lu]*

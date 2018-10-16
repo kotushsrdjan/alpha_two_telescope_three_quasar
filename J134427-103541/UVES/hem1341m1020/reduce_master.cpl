@@ -1,0 +1,22 @@
+# hem1341m1020/reduce_master.cpl: MIDAS Reduction Master by UVES_headsort
+source reduce_prep.cpl
+source reduce_564_01.cpl
+source reduce_390_01.cpl
+source reduce_564_02.cpl
+source reduce_390_02.cpl
+source reduce_564_03.cpl
+source reduce_390_03.cpl
+source reduce_564_04.cpl
+source reduce_390_04.cpl
+source reduce_564_05.cpl
+source reduce_390_05.cpl
+source reduce_564_06.cpl
+source reduce_390_06.cpl
+source reduce_564_07.cpl
+source reduce_390_07.cpl
+source reduce_564_08.cpl
+source reduce_390_08.cpl
+source reduce_564_09.cpl
+source reduce_390_09.cpl
+source reduce_564_10.cpl
+source reduce_390_10.cpl

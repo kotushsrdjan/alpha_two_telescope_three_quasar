@@ -1,0 +1,4 @@
+# he2217m2818/reduce_prep.cpl: CPL Reduction Preparation by UVES_headsort
+ln -s /Users/mmurphy/progs/uves/calib/uves/ech/cal/thargood_4.fits thargood.fits
+ln -s /Users/mmurphy/progs/uves/calib/uves/ech/cal/atmoexan.fits atmoexan.fits
+ln -s /Users/mmurphy/progs/uves/calib/uves/ech/cal/flxstd.fits flxstd.fits

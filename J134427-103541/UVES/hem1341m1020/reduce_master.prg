@@ -1,0 +1,22 @@
+!!! hem1341m1020/reduce_master.prg: MIDAS Reduction Master by UVES_headsort
+@@ reduce_prep.prg
+@@ reduce_564_01.prg
+@@ reduce_390_01.prg
+@@ reduce_564_02.prg
+@@ reduce_390_02.prg
+@@ reduce_564_03.prg
+@@ reduce_390_03.prg
+@@ reduce_564_04.prg
+@@ reduce_390_04.prg
+@@ reduce_564_05.prg
+@@ reduce_390_05.prg
+@@ reduce_564_06.prg
+@@ reduce_390_06.prg
+@@ reduce_564_07.prg
+@@ reduce_390_07.prg
+@@ reduce_564_08.prg
+@@ reduce_390_08.prg
+@@ reduce_564_09.prg
+@@ reduce_390_09.prg
+@@ reduce_564_10.prg
+@@ reduce_390_10.prg

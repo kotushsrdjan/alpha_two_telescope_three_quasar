@@ -1,0 +1,380 @@
+
+Start time     : 2014-03-05T18:01:37
+Program name   : esorex
+Severity level : [ INFO  ] 
+
+18:01:37 [ INFO  ] : Libraries used: CPL = 5.2.0, CFITSIO = 3.09, WCSLIB = 4.4.4, FFTW (single precision)
+
+18:01:37 [ INFO  ] uves_initialize: **********************************
+18:01:37 [ INFO  ] uves_initialize: *** FLAMES/UVES Pipeline 4.7.8 ***
+18:01:37 [ INFO  ] uves_initialize: ***  Recipe: uves_obs_scired   ***
+18:01:37 [ INFO  ] uves_initialize: **********************************
+18:01:37 [ INFO  ] uves_initialize: This recipe reduces a science frame
+18:01:37 [ INFO  ] uves_initialize:   Input frames
+18:01:37 [ INFO  ] uves_print_cpl_frame:     RAW     SCIENCE_RED          'pg0117p213_sci_564_02.fits'
+18:01:37 [ INFO  ] uves_print_cpl_frame:     CALIB   MASTER_BIAS_REDL     'masterbias_redl.fits'
+18:01:37 [ INFO  ] uves_print_cpl_frame:     CALIB   MASTER_BIAS_REDU     'masterbias_redu.fits'
+18:01:37 [ INFO  ] uves_print_cpl_frame:     CALIB   MASTER_FLAT_REDL     'masterflat_redl.fits'
+18:01:37 [ INFO  ] uves_print_cpl_frame:     CALIB   MASTER_FLAT_REDU     'masterflat_redu.fits'
+18:01:37 [ INFO  ] uves_print_cpl_frame:     CALIB   ORDER_TABLE_REDL     'ordertable_redl.fits'
+18:01:37 [ INFO  ] uves_print_cpl_frame:     CALIB   ORDER_TABLE_REDU     'ordertable_redu.fits'
+18:01:37 [ INFO  ] uves_print_cpl_frame:     CALIB   LINE_TABLE_REDL      'linetable_redl.fits'
+18:01:37 [ INFO  ] uves_print_cpl_frame:     CALIB   LINE_TABLE_REDU      'linetable_redu.fits'
+18:01:37 [ INFO  ] load_raw_image:       Raw frame is red, new format, file 'pg0117p213_sci_564_02.fits' has 2 extensions
+18:01:37 [ INFO  ] uves_crop_and_rotate:       Raw image cropped and rotated from 2048x4096 to 4096x2048
+18:01:37 [ INFO  ] uves_crop_and_rotate:       Raw image cropped and rotated from 2048x4096 to 4096x2048
+18:01:37 [ INFO  ] uves_reduce_scired:   No atmospheric extinction table. Flux calibration not done
+18:01:37 [ INFO  ] uves_reduce_scired: Processing REDL chip in 'pg0117p213_sci_564_02.fits'
+18:01:38 [ INFO  ] uves_reduce_scired:   Using master bias in 'masterbias_redl.fits'
+18:01:38 [ INFO  ] uves_reduce_scired:   No master dark in SOF. Dark subtraction not done
+18:01:38 [ INFO  ] uves_reduce_scired:   Using master flat in 'masterflat_redl.fits'
+18:01:38 [ INFO  ] uves_reduce_scired:   Using order table in 'ordertable_redl.fits'
+18:01:38 [ INFO  ] uves_reduce_scired:   Using line table(s) in 'linetable_redl.fits'
+18:01:38 [ INFO  ] uves_reduce_scired:   Using line table(s) in 'linetable_redl.fits'
+18:01:38 [ INFO  ] uves_reduce_scired:   Using line table(s) in 'linetable_redl.fits'
+18:01:38 [ INFO  ] uves_scired_process_chip:   Reducing science object
+18:01:38 [ INFO  ] uves_reduce:     Subtracting master bias
+18:01:38 [ INFO  ] uves_reduce:     Skipping dark subtraction
+18:01:38 [ INFO  ] uves_save_image_local:       Bias/dark subtracted raw image saved to 'pre_redl.fits'
+18:01:38 [ INFO  ] uves_reduce:     Creating noise image
+18:01:38 [ INFO  ] uves_save_image_local:       Background subtracted raw image noise saved to 'errb_redl.fits'
+18:01:38 [ INFO  ] uves_reduce:     Subtracting inter-order background
+18:01:38 [ INFO  ] uves_backsub_spline:       Sample window (pixels): radx, rady = 24, 2
+18:01:39 [ INFO  ] uves_backsub_spline:       Smoothing window (pixels): smox, smoy = 300, 200
+18:01:39 [ INFO  ] uves_backsub_spline:       Subtracting background image
+18:01:39 [ INFO  ] uves_save_image_local:       Background subtracted raw image saved to 'b_redl.fits'
+18:01:39 [ INFO  ] uves_save_image_local:       Master flat image saved to 'mf_redl.fits'
+18:01:39 [ INFO  ] uves_reduce:     Creating master flat noise image
+18:01:40 [ INFO  ] uves_save_image_local:       Master flat noise saved to 'errmf_redl.fits'
+18:01:40 [ INFO  ] uves_reduce:     Slit length = 58.44 pixels
+18:01:40 [ INFO  ] extract_ff_rebin_merge:       Extracting object
+18:01:40 [ INFO  ] uves_extract:         Estimated S/N is 19.01, auto-selecting profile measuring method 'virtual'
+18:01:40 [ INFO  ] uves_extract:         Estimated S/N is 19.01, auto-selecting oversampling factor = 5
+18:01:40 [ INFO  ] uves_extract:           Slit length = 58.4 pixels; offset = 0.0 pixel(s)
+18:01:40 [ INFO  ] uves_extract:         Refining order definition using the object frame
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (0, 0)-degree: RMS = 571 pixels (0/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (0, 1)-degree: RMS = 55.2 pixels (0/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (0, 2)-degree: RMS = 47 pixels (0/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (1, 0)-degree: RMS = 571 pixels (0/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (1, 1)-degree: RMS = 29.2 pixels (0/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (2, 0)-degree: RMS = 570 pixels (0/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (0, 3)-degree: RMS = 46.9 pixels (0/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (1, 2)-degree: RMS = 1.6 pixels (343/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (2, 1)-degree: RMS = 29.1 pixels (0/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (1, 3)-degree: RMS = 0.489 pixels (744/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (2, 2)-degree: RMS = 1.53 pixels (356/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (3, 1)-degree: RMS = 29.1 pixels (0/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (1, 4)-degree: RMS = 0.459 pixels (805/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (2, 3)-degree: RMS = 0.194 pixels (998/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (3, 2)-degree: RMS = 1.54 pixels (352/8596 outliers)
+18:01:43 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (1, 5)-degree: RMS = 0.462 pixels (791/8596 outliers)
+18:01:44 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (2, 4)-degree: RMS = 0.176 pixels (1061/8596 outliers)
+18:01:44 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (3, 3)-degree: RMS = 0.193 pixels (1024/8596 outliers)
+18:01:44 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (2, 5)-degree: RMS = 0.174 pixels (1072/8596 outliers)
+18:01:44 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (3, 4)-degree: RMS = 0.173 pixels (1097/8596 outliers)
+18:01:44 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (4, 3)-degree: RMS = 0.192 pixels (1011/8596 outliers)
+18:01:44 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (2, 6)-degree: RMS = 0.174 pixels (1073/8596 outliers)
+18:01:44 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (3, 5)-degree: RMS = 0.173 pixels (1101/8596 outliers)
+18:01:44 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (4, 4)-degree: RMS = 0.173 pixels (1091/8596 outliers)
+18:01:44 [ INFO  ] uves_polynomial_regression_2d_autodegree:             Using degree (2, 4), RMS = 0.176 pixels
+18:01:44 [ INFO  ] repeat_orderdef:           Average shift with respect to calibration solution is 3.83 pixels
+18:01:44 [ INFO  ] opt_extract_sky:           Defining sky region
+18:01:44 [ INFO  ] opt_extract_sky:             44/61 sky pixels
+18:01:44 [ INFO  ] opt_extract_sky:           Subtracting sky (method = median of sky channels)
+18:01:45 [ INFO  ] uves_extract:         Measuring spatial profile (method = virtual, oversampling = 5)
+18:01:45 [ INFO  ] opt_measure_profile:             Fitting global polynomials to resampled profile (305 spatial bins)
+18:01:53 [ INFO  ] uves_extract:         Extracting object and sky (method = optimal)
+18:01:53 [ INFO  ] uves_extract:         Order #1: S/N = 16.38
+18:01:53 [ INFO  ] uves_extract:         Order #2: S/N = 24.12
+18:01:53 [ INFO  ] uves_extract:         Order #3: S/N = 26.49
+18:01:53 [ INFO  ] uves_extract:         Order #4: S/N = 29.26
+18:01:53 [ INFO  ] uves_extract:         Order #5: S/N = 30.45
+18:01:53 [ INFO  ] uves_extract:         Order #6: S/N = 28.59
+18:01:53 [ INFO  ] uves_extract:         Order #7: S/N = 27.00
+18:01:54 [ INFO  ] uves_extract:         Order #8: S/N = 26.27
+18:01:54 [ INFO  ] uves_extract:         Order #9: S/N = 25.80
+18:01:54 [ INFO  ] uves_extract:         Order #10: S/N = 26.13
+18:01:54 [ INFO  ] uves_extract:         Order #11: S/N = 26.61
+18:01:54 [ INFO  ] uves_extract:         Order #12: S/N = 27.25
+18:01:54 [ INFO  ] uves_extract:         Order #13: S/N = 27.88
+18:01:54 [ INFO  ] uves_extract:         Order #14: S/N = 28.46
+18:01:55 [ INFO  ] uves_extract:         Order #15: S/N = 28.46
+18:01:55 [ INFO  ] uves_extract:         Order #16: S/N = 28.08
+18:01:55 [ INFO  ] uves_extract:         Order #17: S/N = 27.85
+18:01:55 [ INFO  ] uves_extract:         Order #18: S/N = 27.81
+18:01:55 [ INFO  ] uves_extract:         Order #19: S/N = 28.21
+18:01:55 [ INFO  ] uves_extract:         Order #20: S/N = 28.68
+18:01:55 [ INFO  ] uves_extract:         Order #21: S/N = 28.98
+18:01:55 [ INFO  ] uves_extract:         Order #22: S/N = 29.24
+18:01:56 [ INFO  ] uves_extract:         Order #23: S/N = 29.59
+18:01:56 [ INFO  ] uves_extract:         Order #24: S/N = 19.81
+18:01:56 [ INFO  ] uves_extract:         Average S/N = 18.140
+18:01:56 [ INFO  ] uves_extract:           Recomputing pixel variances
+18:01:57 [ INFO  ] uves_extract:         Extracting object and sky (method = optimal)
+18:01:57 [ INFO  ] uves_extract:         Order #1: S/N = 16.76
+18:01:57 [ INFO  ] uves_extract:         Order #2: S/N = 24.47
+18:01:57 [ INFO  ] uves_extract:         Order #3: S/N = 26.81
+18:01:57 [ INFO  ] uves_extract:         Order #4: S/N = 29.60
+18:01:58 [ INFO  ] uves_extract:         Order #5: S/N = 30.79
+18:01:58 [ INFO  ] uves_extract:         Order #6: S/N = 28.93
+18:01:58 [ INFO  ] uves_extract:         Order #7: S/N = 27.32
+18:01:58 [ INFO  ] uves_extract:         Order #8: S/N = 26.56
+18:01:58 [ INFO  ] uves_extract:         Order #9: S/N = 26.12
+18:01:58 [ INFO  ] uves_extract:         Order #10: S/N = 26.45
+18:01:58 [ INFO  ] uves_extract:         Order #11: S/N = 26.89
+18:01:58 [ INFO  ] uves_extract:         Order #12: S/N = 27.59
+18:01:59 [ INFO  ] uves_extract:         Order #13: S/N = 28.18
+18:01:59 [ INFO  ] uves_extract:         Order #14: S/N = 28.79
+18:01:59 [ INFO  ] uves_extract:         Order #15: S/N = 28.78
+18:01:59 [ INFO  ] uves_extract:         Order #16: S/N = 28.39
+18:01:59 [ INFO  ] uves_extract:         Order #17: S/N = 28.17
+18:01:59 [ INFO  ] uves_extract:         Order #18: S/N = 28.19
+18:01:59 [ INFO  ] uves_extract:         Order #19: S/N = 28.58
+18:01:59 [ INFO  ] uves_extract:         Order #20: S/N = 28.97
+18:02:00 [ INFO  ] uves_extract:         Order #21: S/N = 29.32
+18:02:00 [ INFO  ] uves_extract:         Order #22: S/N = 29.60
+18:02:00 [ INFO  ] uves_extract:         Order #23: S/N = 29.95
+18:02:00 [ INFO  ] uves_extract:         Order #24: S/N = 20.22
+18:02:00 [ INFO  ] uves_extract:         Average S/N = 18.498
+18:02:02 [ INFO  ] uves_save_image_local:           Reconstructed image saved to 'simulate_redl.fits'
+18:02:02 [ INFO  ] extract_ff_rebin_merge:         2090 hot pixels were detected during optimal extraction
+18:02:02 [ INFO  ] uves_save_image_local:         Extracted spectrum saved to 'xb_redl.fits'
+18:02:02 [ INFO  ] uves_save_image_local:         Extracted spectrum noise saved to 'errxb_redl.fits'
+18:02:02 [ INFO  ] uves_save_image_local:         Extracted sky saved to 'xsky_redl.fits'
+18:02:02 [ INFO  ] uves_save_image_local:         Noise of extracted sky saved to 'errxsky_redl.fits'
+18:02:02 [ INFO  ] uves_save_image_local:         Optimal extraction weights saved to 'weights_redl.fits'
+18:02:02 [ INFO  ] uves_save_table_local:         Cosmic ray table saved to 'crmask_redl.fits'
+18:02:02 [ INFO  ] uves_save_image_local:         Cosmic ray image saved to 'crimage_redl.fits'
+18:02:03 [ INFO  ] uves_save_table_local:         Profile table saved to 'profile_redl.fits'
+18:02:03 [ INFO  ] extract_ff_rebin_merge:       Extracting master flat field
+18:02:03 [ INFO  ] uves_extract:           Slit length = 58.4 pixels; offset = 0.0 pixel(s)
+18:02:03 [ INFO  ] uves_extract:         Extracting object (method = weighted)
+18:02:04 [ INFO  ] uves_save_image_local:         Normalized master flat spectrum saved to 'xmf_redl.fits'
+18:02:04 [ INFO  ] uves_save_image_local:         Noise of normalized master flat spectrum saved to 'errxmf_redl.fits'
+18:02:04 [ INFO  ] extract_ff_rebin_merge:       Rebinning master flat spectrum
+18:02:04 [ INFO  ] uves_save_image_local:         Resampled master flat spectrum saved to 'wxmf_redl.fits'
+18:02:04 [ INFO  ] extract_ff_rebin_merge:       Dividing by normalized master flat-field (method = extract)
+18:02:04 [ INFO  ] uves_save_image_local:         Flat-fielded spectrum saved to 'fxb_redl.fits'
+18:02:04 [ INFO  ] uves_save_image_local:         Flat-fielded spectrum noise saved to 'errfxb_redl.fits'
+18:02:04 [ INFO  ] uves_save_image_local:         Flat-fielded sky saved to 'fxsky_redl.fits'
+18:02:04 [ INFO  ] uves_save_image_local:         Flat-fielded sky noise saved to 'errfxsky_redl.fits'
+18:02:04 [ INFO  ] extract_ff_rebin_merge:       Rebinning spectrum
+18:02:04 [ INFO  ] interpolate_wave:         Interpolating dispersion relation at offset = -2.78
+18:02:04 [ INFO  ] uves_save_table_local:         Interpolated dispersion relation saved to 'intdisp_redl.fits'
+18:02:04 [ INFO  ] extract_ff_rebin_merge:       Rebinning spectrum noise
+18:02:04 [ INFO  ] extract_ff_rebin_merge:       Rebinning sky spectrum
+18:02:04 [ INFO  ] interpolate_wave:         Interpolating dispersion relation at offset = 0.00
+18:02:05 [ INFO  ] extract_ff_rebin_merge:       Rebinning sky spectrum noise
+18:02:05 [ INFO  ] uves_save_image_local:         Rebinned spectrum saved to 'wfxb_redl.fits'
+18:02:05 [ INFO  ] uves_save_image_local:         Noise of rebinned spectrum saved to 'errwfxb_redl.fits'
+18:02:05 [ INFO  ] uves_save_image_local:         Rebinned sky saved to 'wfxsky_redl.fits'
+18:02:05 [ INFO  ] uves_save_image_local:         Noise of rebinned sky saved to 'errwfxsky_redl.fits'
+18:02:05 [ INFO  ] extract_ff_rebin_merge:       Rebinning pre-flatfielded spectrum
+18:02:05 [ INFO  ] uves_save_image_local:         Rebinned, extracted spectrum saved to 'wx_redl.fits'
+18:02:05 [ INFO  ] extract_ff_rebin_merge:       Merging sky
+18:02:05 [ INFO  ] uves_merge_orders:         delt1=0.000000 delt2=0.000000
+18:02:05 [ INFO  ] extract_ff_rebin_merge:       Merging spectrum
+18:02:05 [ INFO  ] uves_merge_orders:         delt1=0.000000 delt2=0.000000
+18:02:05 [ INFO  ] uves_save_image_local:         Merged spectrum saved to 'm_redl.fits'
+18:02:05 [ INFO  ] uves_save_image_local:         Noise of merged spectrum saved to 'errm_redl.fits'
+18:02:05 [ INFO  ] uves_save_image_local:         Merged sky saved to 'msky_redl.fits'
+18:02:05 [ INFO  ] uves_save_image_local:         Noise of merged sky saved to 'errmsky_redl.fits'
+18:02:05 [ INFO  ] uves_scired_process_chip:   Skipping absolute flux calibration
+18:02:05 [ INFO  ] uves_reduce_scired: Saving products...
+18:02:05 [ INFO  ] uves_reduce_scired: Reduced science spectrum 'red_science_redl.fits' (RED_SCIENCE_REDL) added to frameset
+18:02:05 [ INFO  ] uves_reduce_scired: Merged science spectrum 'merged_science_redl.fits' (MERGED_SCIENCE_REDL) added to frameset
+18:02:05 [ INFO  ] uves_reduce_scired: Wavelength calibrated science spectrum 'resampled_science_redl.fits' (WCALIB_SCIENCE_REDL) added to frameset
+18:02:05 [ INFO  ] uves_reduce_scired: Extraction quality table 'order_extract_qc_redl.fits' (ORDER_EXTRACT_QC_REDL) added to frameset
+18:02:05 [ INFO  ] uves_save_paf:   Writing resampled_ff_science_redl-0.paf
+18:02:05 [ INFO  ] uves_reduce_scired: Wavelength calibrated flat-fielded science spectrum 'resampled_ff_science_redl.fits' (WCALIB_FF_SCIENCE_REDL) added to frameset
+18:02:05 [ INFO  ] uves_reduce_scired: Wavelength calibrated flat-field spectrum 'resampled_mflat_redl.fits' (WCALIB_FLAT_OBJ_REDL) added to frameset
+18:02:06 [ INFO  ] uves_reduce_scired: Science spectrum error 'error_red_science_redl.fits' (ERRORBAR_SCIENCE_REDL) added to frameset
+18:02:06 [ INFO  ] uves_reduce_scired: Flat-fielded spectrum variance 'variance_ff_science_redl.fits' (VARIANCE_SCIENCE_REDL) added to frameset
+18:02:06 [ INFO  ] uves_reduce_scired: Background image 'background_redl.fits' (BKG_SCI_REDL) added to frameset
+18:02:06 [ INFO  ] uves_reduce_scired: Order trace table 'ordertrace_redl.fits' (ORDER_TRACE_REDL) added to frameset
+18:02:06 [ INFO  ] uves_reduce_scired: Cosmic ray table 'cr_mask_redl.fits' (CRMASK_REDL) added to frameset
+18:02:06 [ INFO  ] uves_reduce_scired: Sky spectrum 'merged_sky_redl.fits' (MERGED_SKY_REDL) added to frameset
+18:02:06 [ INFO  ] uves_reduce_scired: Processing REDU chip in 'pg0117p213_sci_564_02.fits'
+18:02:06 [ INFO  ] uves_reduce_scired:   Using master bias in 'masterbias_redu.fits'
+18:02:06 [ INFO  ] uves_reduce_scired:   No master dark in SOF. Dark subtraction not done
+18:02:06 [ INFO  ] uves_reduce_scired:   Using master flat in 'masterflat_redu.fits'
+18:02:06 [ INFO  ] uves_reduce_scired:   Using order table in 'ordertable_redu.fits'
+18:02:06 [ INFO  ] uves_reduce_scired:   Using line table(s) in 'linetable_redu.fits'
+18:02:06 [ INFO  ] uves_reduce_scired:   Using line table(s) in 'linetable_redu.fits'
+18:02:06 [ INFO  ] uves_reduce_scired:   Using line table(s) in 'linetable_redu.fits'
+18:02:06 [ INFO  ] uves_scired_process_chip:   Reducing science object
+18:02:07 [ INFO  ] uves_reduce:     Subtracting master bias
+18:02:07 [ INFO  ] uves_reduce:     Skipping dark subtraction
+18:02:07 [ INFO  ] uves_save_image_local:       Bias/dark subtracted raw image saved to 'pre_redu.fits'
+18:02:07 [ INFO  ] uves_reduce:     Creating noise image
+18:02:07 [ INFO  ] uves_save_image_local:       Background subtracted raw image noise saved to 'errb_redu.fits'
+18:02:07 [ INFO  ] uves_reduce:     Subtracting inter-order background
+18:02:07 [ INFO  ] uves_backsub_spline:       Sample window (pixels): radx, rady = 24, 2
+18:02:07 [ INFO  ] uves_backsub_spline:       Smoothing window (pixels): smox, smoy = 300, 200
+18:02:08 [ INFO  ] uves_backsub_spline:       Subtracting background image
+18:02:08 [ INFO  ] uves_save_image_local:       Background subtracted raw image saved to 'b_redu.fits'
+18:02:08 [ INFO  ] uves_save_image_local:       Master flat image saved to 'mf_redu.fits'
+18:02:08 [ INFO  ] uves_reduce:     Creating master flat noise image
+18:02:09 [ INFO  ] uves_save_image_local:       Master flat noise saved to 'errmf_redu.fits'
+18:02:09 [ INFO  ] uves_reduce:     Slit length = 58.44 pixels
+18:02:09 [ INFO  ] extract_ff_rebin_merge:       Extracting object
+18:02:09 [ INFO  ] uves_extract:         Estimated S/N is 22.95, auto-selecting profile measuring method 'virtual'
+18:02:09 [ INFO  ] uves_extract:         Estimated S/N is 22.95, auto-selecting oversampling factor = 5
+18:02:09 [ INFO  ] uves_extract:           Slit length = 58.4 pixels; offset = 0.0 pixel(s)
+18:02:09 [ INFO  ] uves_extract:         Refining order definition using the object frame
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (0, 0)-degree: RMS = 564 pixels (0/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (0, 1)-degree: RMS = 58.4 pixels (0/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (0, 2)-degree: RMS = 54.3 pixels (0/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (1, 0)-degree: RMS = 564 pixels (0/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (1, 1)-degree: RMS = 23.5 pixels (0/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (2, 0)-degree: RMS = 564 pixels (0/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (0, 3)-degree: RMS = 54.2 pixels (0/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (1, 2)-degree: RMS = 1.45 pixels (221/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (2, 1)-degree: RMS = 23.5 pixels (0/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (1, 3)-degree: RMS = 1.01 pixels (283/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (2, 2)-degree: RMS = 1.08 pixels (226/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (3, 1)-degree: RMS = 23.4 pixels (0/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (1, 4)-degree: RMS = 1 pixels (286/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (2, 3)-degree: RMS = 0.126 pixels (543/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (3, 2)-degree: RMS = 1.07 pixels (230/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (1, 5)-degree: RMS = 0.996 pixels (284/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (2, 4)-degree: RMS = 0.113 pixels (570/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (3, 3)-degree: RMS = 0.122 pixels (541/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (2, 5)-degree: RMS = 0.113 pixels (580/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (3, 4)-degree: RMS = 0.109 pixels (581/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (4, 3)-degree: RMS = 0.12 pixels (588/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (2, 6)-degree: RMS = 0.113 pixels (585/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (3, 5)-degree: RMS = 0.108 pixels (594/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             (4, 4)-degree: RMS = 0.108 pixels (612/6036 outliers)
+18:02:11 [ INFO  ] uves_polynomial_regression_2d_autodegree:             Using degree (2, 4), RMS = 0.113 pixels
+18:02:11 [ INFO  ] repeat_orderdef:           Average shift with respect to calibration solution is 6.63 pixels
+18:02:11 [ INFO  ] opt_extract_sky:           Defining sky region
+18:02:11 [ INFO  ] opt_extract_sky:             47/61 sky pixels
+18:02:11 [ INFO  ] opt_extract_sky:           Subtracting sky (method = median of sky channels)
+18:02:11 [ INFO  ] uves_extract:         Measuring spatial profile (method = virtual, oversampling = 5)
+18:02:12 [ INFO  ] opt_measure_profile:             Fitting global polynomials to resampled profile (305 spatial bins)
+18:02:15 [ INFO  ] uves_extract:         Extracting object and sky (method = optimal)
+18:02:16 [ INFO  ] uves_extract:         Order #1: S/N = 22.92
+18:02:16 [ INFO  ] uves_extract:         Order #2: S/N = 29.71
+18:02:16 [ INFO  ] uves_extract:         Order #3: S/N = 30.48
+18:02:16 [ INFO  ] uves_extract:         Order #4: S/N = 30.78
+18:02:16 [ INFO  ] uves_extract:         Order #5: S/N = 31.09
+18:02:16 [ INFO  ] uves_extract:         Order #6: S/N = 31.73
+18:02:16 [ INFO  ] uves_extract:         Order #7: S/N = 32.64
+18:02:16 [ INFO  ] uves_extract:         Order #8: S/N = 33.11
+18:02:17 [ INFO  ] uves_extract:         Order #9: S/N = 33.35
+18:02:17 [ INFO  ] uves_extract:         Order #10: S/N = 33.34
+18:02:17 [ INFO  ] uves_extract:         Order #11: S/N = 33.02
+18:02:17 [ INFO  ] uves_extract:         Order #12: S/N = 32.99
+18:02:17 [ INFO  ] uves_extract:         Order #13: S/N = 32.93
+18:02:17 [ INFO  ] uves_extract:         Order #14: S/N = 32.52
+18:02:17 [ INFO  ] uves_extract:         Order #15: S/N = 32.56
+18:02:17 [ INFO  ] uves_extract:         Order #16: S/N = 28.43
+18:02:17 [ INFO  ] uves_extract:         Average S/N = 23.943
+18:02:17 [ INFO  ] uves_extract:           Recomputing pixel variances
+18:02:18 [ INFO  ] uves_extract:         Extracting object and sky (method = optimal)
+18:02:18 [ INFO  ] uves_extract:         Order #1: S/N = 23.15
+18:02:18 [ INFO  ] uves_extract:         Order #2: S/N = 29.93
+18:02:18 [ INFO  ] uves_extract:         Order #3: S/N = 30.67
+18:02:19 [ INFO  ] uves_extract:         Order #4: S/N = 30.95
+18:02:19 [ INFO  ] uves_extract:         Order #5: S/N = 31.32
+18:02:19 [ INFO  ] uves_extract:         Order #6: S/N = 31.95
+18:02:19 [ INFO  ] uves_extract:         Order #7: S/N = 32.85
+18:02:19 [ INFO  ] uves_extract:         Order #8: S/N = 33.32
+18:02:19 [ INFO  ] uves_extract:         Order #9: S/N = 33.61
+18:02:19 [ INFO  ] uves_extract:         Order #10: S/N = 33.60
+18:02:19 [ INFO  ] uves_extract:         Order #11: S/N = 33.22
+18:02:19 [ INFO  ] uves_extract:         Order #12: S/N = 33.22
+18:02:20 [ INFO  ] uves_extract:         Order #13: S/N = 33.17
+18:02:20 [ INFO  ] uves_extract:         Order #14: S/N = 32.74
+18:02:20 [ INFO  ] uves_extract:         Order #15: S/N = 32.80
+18:02:20 [ INFO  ] uves_extract:         Order #16: S/N = 28.65
+18:02:20 [ INFO  ] uves_extract:         Average S/N = 24.200
+18:02:21 [ INFO  ] uves_save_image_local:           Reconstructed image saved to 'simulate_redu.fits'
+18:02:21 [ INFO  ] extract_ff_rebin_merge:         1733 hot pixels were detected during optimal extraction
+18:02:21 [ INFO  ] uves_save_image_local:         Extracted spectrum saved to 'xb_redu.fits'
+18:02:21 [ INFO  ] uves_save_image_local:         Extracted spectrum noise saved to 'errxb_redu.fits'
+18:02:21 [ INFO  ] uves_save_image_local:         Extracted sky saved to 'xsky_redu.fits'
+18:02:21 [ INFO  ] uves_save_image_local:         Noise of extracted sky saved to 'errxsky_redu.fits'
+18:02:21 [ INFO  ] uves_save_image_local:         Optimal extraction weights saved to 'weights_redu.fits'
+18:02:21 [ INFO  ] uves_save_table_local:         Cosmic ray table saved to 'crmask_redu.fits'
+18:02:22 [ INFO  ] uves_save_image_local:         Cosmic ray image saved to 'crimage_redu.fits'
+18:02:24 [ INFO  ] uves_save_table_local:         Profile table saved to 'profile_redu.fits'
+18:02:24 [ INFO  ] extract_ff_rebin_merge:       Extracting master flat field
+18:02:24 [ INFO  ] uves_extract:           Slit length = 58.4 pixels; offset = 0.0 pixel(s)
+18:02:24 [ INFO  ] uves_extract:         Extracting object (method = weighted)
+18:02:24 [ INFO  ] uves_save_image_local:         Normalized master flat spectrum saved to 'xmf_redu.fits'
+18:02:24 [ INFO  ] uves_save_image_local:         Noise of normalized master flat spectrum saved to 'errxmf_redu.fits'
+18:02:24 [ INFO  ] extract_ff_rebin_merge:       Rebinning master flat spectrum
+18:02:24 [ INFO  ] uves_save_image_local:         Resampled master flat spectrum saved to 'wxmf_redu.fits'
+18:02:24 [ INFO  ] extract_ff_rebin_merge:       Dividing by normalized master flat-field (method = extract)
+18:02:24 [ INFO  ] uves_save_image_local:         Flat-fielded spectrum saved to 'fxb_redu.fits'
+18:02:24 [ INFO  ] uves_save_image_local:         Flat-fielded spectrum noise saved to 'errfxb_redu.fits'
+18:02:24 [ INFO  ] uves_save_image_local:         Flat-fielded sky saved to 'fxsky_redu.fits'
+18:02:24 [ INFO  ] uves_save_image_local:         Flat-fielded sky noise saved to 'errfxsky_redu.fits'
+18:02:24 [ INFO  ] extract_ff_rebin_merge:       Rebinning spectrum
+18:02:24 [ INFO  ] interpolate_wave:         Interpolating dispersion relation at offset = -4.75
+18:02:24 [ INFO  ] uves_save_table_local:         Interpolated dispersion relation saved to 'intdisp_redu.fits'
+18:02:24 [ INFO  ] extract_ff_rebin_merge:       Rebinning spectrum noise
+18:02:24 [ INFO  ] extract_ff_rebin_merge:       Rebinning sky spectrum
+18:02:24 [ INFO  ] interpolate_wave:         Interpolating dispersion relation at offset = 0.00
+18:02:25 [ INFO  ] extract_ff_rebin_merge:       Rebinning sky spectrum noise
+18:02:25 [ INFO  ] uves_save_image_local:         Rebinned spectrum saved to 'wfxb_redu.fits'
+18:02:25 [ INFO  ] uves_save_image_local:         Noise of rebinned spectrum saved to 'errwfxb_redu.fits'
+18:02:25 [ INFO  ] uves_save_image_local:         Rebinned sky saved to 'wfxsky_redu.fits'
+18:02:25 [ INFO  ] uves_save_image_local:         Noise of rebinned sky saved to 'errwfxsky_redu.fits'
+18:02:25 [ INFO  ] extract_ff_rebin_merge:       Rebinning pre-flatfielded spectrum
+18:02:25 [ INFO  ] uves_save_image_local:         Rebinned, extracted spectrum saved to 'wx_redu.fits'
+18:02:25 [ INFO  ] extract_ff_rebin_merge:       Merging sky
+18:02:25 [ INFO  ] uves_merge_orders:         delt1=0.000000 delt2=0.000000
+18:02:25 [ INFO  ] extract_ff_rebin_merge:       Merging spectrum
+18:02:25 [ INFO  ] uves_merge_orders:         delt1=0.000000 delt2=0.000000
+18:02:25 [ INFO  ] uves_save_image_local:         Merged spectrum saved to 'm_redu.fits'
+18:02:25 [ INFO  ] uves_save_image_local:         Noise of merged spectrum saved to 'errm_redu.fits'
+18:02:25 [ INFO  ] uves_save_image_local:         Merged sky saved to 'msky_redu.fits'
+18:02:25 [ INFO  ] uves_save_image_local:         Noise of merged sky saved to 'errmsky_redu.fits'
+18:02:25 [ INFO  ] uves_scired_process_chip:   Skipping absolute flux calibration
+18:02:25 [ INFO  ] uves_reduce_scired: Saving products...
+18:02:25 [ INFO  ] uves_reduce_scired: Reduced science spectrum 'red_science_redu.fits' (RED_SCIENCE_REDU) added to frameset
+18:02:25 [ INFO  ] uves_reduce_scired: Merged science spectrum 'merged_science_redu.fits' (MERGED_SCIENCE_REDU) added to frameset
+18:02:25 [ INFO  ] uves_reduce_scired: Wavelength calibrated science spectrum 'resampled_science_redu.fits' (WCALIB_SCIENCE_REDU) added to frameset
+18:02:25 [ INFO  ] uves_reduce_scired: Extraction quality table 'order_extract_qc_redu.fits' (ORDER_EXTRACT_QC_REDU) added to frameset
+18:02:25 [ INFO  ] uves_save_paf:   Writing resampled_ff_science_redu-0.paf
+18:02:25 [ INFO  ] uves_reduce_scired: Wavelength calibrated flat-fielded science spectrum 'resampled_ff_science_redu.fits' (WCALIB_FF_SCIENCE_REDU) added to frameset
+18:02:25 [ INFO  ] uves_reduce_scired: Wavelength calibrated flat-field spectrum 'resampled_mflat_redu.fits' (WCALIB_FLAT_OBJ_REDU) added to frameset
+18:02:25 [ INFO  ] uves_reduce_scired: Science spectrum error 'error_red_science_redu.fits' (ERRORBAR_SCIENCE_REDU) added to frameset
+18:02:25 [ INFO  ] uves_reduce_scired: Flat-fielded spectrum variance 'variance_ff_science_redu.fits' (VARIANCE_SCIENCE_REDU) added to frameset
+18:02:26 [ INFO  ] uves_reduce_scired: Background image 'background_redu.fits' (BKG_SCI_REDU) added to frameset
+18:02:26 [ INFO  ] uves_reduce_scired: Order trace table 'ordertrace_redu.fits' (ORDER_TRACE_REDU) added to frameset
+18:02:26 [ INFO  ] uves_reduce_scired: Cosmic ray table 'cr_mask_redu.fits' (CRMASK_REDU) added to frameset
+18:02:26 [ INFO  ] uves_reduce_scired: Sky spectrum 'merged_sky_redu.fits' (MERGED_SKY_REDU) added to frameset
+18:02:26 [ INFO  ] : Created product red_science_redl.fits (in place)
+18:02:26 [ INFO  ] : Created product merged_science_redl.fits (in place)
+18:02:26 [ INFO  ] : Created product resampled_science_redl.fits (in place)
+18:02:26 [ INFO  ] : Created product order_extract_qc_redl.fits (in place)
+18:02:26 [ INFO  ] : Created product resampled_ff_science_redl.fits (in place)
+18:02:26 [ INFO  ] : Created product resampled_mflat_redl.fits (in place)
+18:02:26 [ INFO  ] : Created product error_red_science_redl.fits (in place)
+18:02:26 [ INFO  ] : Created product variance_ff_science_redl.fits (in place)
+18:02:26 [ INFO  ] : Created product background_redl.fits (in place)
+18:02:26 [ INFO  ] : Created product ordertrace_redl.fits (in place)
+18:02:26 [ INFO  ] : Created product cr_mask_redl.fits (in place)
+18:02:26 [ INFO  ] : Created product merged_sky_redl.fits (in place)
+18:02:26 [ INFO  ] : Created product red_science_redu.fits (in place)
+18:02:26 [ INFO  ] : Created product merged_science_redu.fits (in place)
+18:02:26 [ INFO  ] : Created product resampled_science_redu.fits (in place)
+18:02:26 [ INFO  ] : Created product order_extract_qc_redu.fits (in place)
+18:02:26 [ INFO  ] : Created product resampled_ff_science_redu.fits (in place)
+18:02:26 [ INFO  ] : Created product resampled_mflat_redu.fits (in place)
+18:02:26 [ INFO  ] : Created product error_red_science_redu.fits (in place)
+18:02:26 [ INFO  ] : Created product variance_ff_science_redu.fits (in place)
+18:02:26 [ INFO  ] : Created product background_redu.fits (in place)
+18:02:26 [ INFO  ] : Created product ordertrace_redu.fits (in place)
+18:02:26 [ INFO  ] : Created product cr_mask_redu.fits (in place)
+18:02:26 [ INFO  ] : Created product merged_sky_redu.fits (in place)
+18:02:26 [ INFO  ] : 24 products created
+18:02:26 [ INFO  ] : Recipe operation(s) took           49.6 seconds to complete.
+18:02:26 [ INFO  ] : Size of single raw input frame  =    35.24 MB
+
+18:02:26 [ INFO  ] : => processing rate of     0.71 MB/sec 
+

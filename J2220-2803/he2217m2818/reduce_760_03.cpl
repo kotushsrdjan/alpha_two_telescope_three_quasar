@@ -1,0 +1,41 @@
+# he2217m2818/reduce_760_03.cpl: CPL Reduction Script by UVES_headsort
+# Not including STANDARDS on request
+uves_makesof.csh 760_03
+#uves_itphmod.csh 760_03 redl
+esorex uves_cal_predict --process_chip=redl --plotter='cat > gnuplot_760_03_$$.gp' --mbox_x=20 --mbox_y=20 --trans_x=-1.0 --trans_y=1.0 reduce_760_03_pred.sof
+uves_filtplot.py 760_03 -x -p phmod_760_03_l.ps XDIF YDIF XMOD YMOD
+#uves_itphmod.csh 760_03 redu
+esorex uves_cal_predict --process_chip=redu --plotter='cat > gnuplot_760_03_$$.gp' --mbox_x=20 --mbox_y=20 --trans_x=-1.5 --trans_y=1.0 reduce_760_03_pred.sof
+uves_filtplot.py 760_03 -x -p phmod_760_03_u.ps XDIF YDIF XMOD YMOD
+esorex uves_cal_orderpos --process_chip=redl reduce_760_03_ord.sof
+esorex uves_cal_orderpos --process_chip=redu reduce_760_03_ord.sof
+esorex uves_cal_mbias reduce_760_03_bias.sof
+esorex uves_cal_mflat reduce_760_03_flat.sof
+esorex uves_cal_wavecal --process_chip=redl --degree=5 --tolerance=0.195 --minlines=0 --maxlines=0 reduce_760_03_wav1.sof
+esorex uves_cal_wavecal --process_chip=redu --degree=5 --tolerance=0.195 --minlines=0 --maxlines=0 reduce_760_03_wav1.sof
+esorex uves_obs_scired --debug reduce_760_03_sci.sof
+#uves_itwavres.csh 760_03 0.065 5 redl nlines 0 0
+esorex uves_cal_wavecal --debug --process_chip=redl --extract.method=weighted --plotter='cat > gnuplot_760_03_$$.gp' --degree=5 --tolerance=0.065 --minlines=0 --maxlines=0 reduce_760_03_wav2.sof
+UVES_wavres linetable_redl.fits > wavres_760_03_l.dat
+uves_filtplot.py 760_03 -x -p resol_760_03_l.ps WaveC Resol X Ynew
+#uves_itwavres.csh 760_03 0.065 5 redu nlines 0 0
+esorex uves_cal_wavecal --debug --process_chip=redu --extract.method=weighted --plotter='cat > gnuplot_760_03_$$.gp' --degree=5 --tolerance=0.070 --minlines=0 --maxlines=0 reduce_760_03_wav2.sof
+UVES_wavres linetable_redu.fits > wavres_760_03_u.dat
+uves_filtplot.py 760_03 -x -p resol_760_03_u.ps WaveC Resol X Ynew
+esorex uves_obs_scired --debug reduce_760_03_sci.sof
+uves_copyhead.csh 760_03
+/bin/mv -f wfxb_redl.fits wfxb_he2217m2818_sci_760_03_l.fits
+/bin/mv -f errwfxb_redl.fits errwhe2217m2818_sci_760_03_l.fits
+/bin/mv -f fxb_redl.fits fxb_he2217m2818_sci_760_03_l.fits
+/bin/mv -f errfxb_redl.fits err_he2217m2818_sci_760_03_l.fits
+/bin/mv -f spectrum_redl_0_2.fits thar_he2217m2818_sci_760_03_l.fits
+/bin/mv -f spectrum_noise_redl_0_2.fits errthar_he2217m2818_sci_760_03_l.fits
+/bin/mv -f linetable_redl.fits wpol_he2217m2818_sci_760_03_l.fits
+/bin/mv -f wfxb_redu.fits wfxb_he2217m2818_sci_760_03_u.fits
+/bin/mv -f errwfxb_redu.fits errwhe2217m2818_sci_760_03_u.fits
+/bin/mv -f fxb_redu.fits fxb_he2217m2818_sci_760_03_u.fits
+/bin/mv -f errfxb_redu.fits err_he2217m2818_sci_760_03_u.fits
+/bin/mv -f spectrum_redu_0_2.fits thar_he2217m2818_sci_760_03_u.fits
+/bin/mv -f spectrum_noise_redu_0_2.fits errthar_he2217m2818_sci_760_03_u.fits
+/bin/mv -f linetable_redu.fits wpol_he2217m2818_sci_760_03_u.fits
+/bin/rm -f reduce_760_03_*.sof *_red[lu]*
