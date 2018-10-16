@@ -5,4 +5,6 @@ This repository contains folder for each quasar with folders for each spectrogra
 
 Each of the spectrograph folders contains folder with the raw exposure files, UVES_popler log file (.upl) used with UVES_popler to produce final spectrum used in thesis and folder named as redshift of each absorption system analyzed in the thesis. The .upl file also contains information about final shifts and long-range distortion slopes for each exposure.
 
-Folders named as redshift contain final.13 and final.18 files that show final fit in that absorption system and final set of iterations that led towards this fit. This folder also contains vp_setup.dat and vp_splot.dat files which contain various parameters associated with VPFIT, as well as atom.dat file 
+Folders named as redshift contain final.13 and final.18 files that show final fit in that absorption system and final set of iterations that led towards this fit. The absorption profile fit was run in VPFIT using the commented-out command in the first line of the final.13 file. 
+
+These folders also contains vp_setup.dat and vp_splot.dat files which contain various parameters associated with VPFIT, as well as input atomic data file for VPFIT atom.dat file from the <a href="https://github.com/MTMurphy77/MMatomdat">repository</a> associated with <a href="http://adsabs.harvard.edu/abs/2014MNRAS.438..388M">Murphy & Berengut (2014, MNRAS, 438, 388, arXiv:1311.2949)</a>.
